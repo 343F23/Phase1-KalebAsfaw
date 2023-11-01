@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KalebsKalender</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>KalebsKalender</h1>
+    <main>
+    <div class="image-container">
+        <img id="month-image" src="https://picsum.photos/700/100" alt="Seasonal Photos from Lorem Picsum">
+    </div>
+    <div class="calendar">
+        <div class="header">
+            <h2 id="calendar-title">Select A Month</h2>
+            <label for="month-select">Select a Month:</label>
+            <select id="month-select" onchange="changeMonth(this.value)">
+                <option value="Select">Select</option>
+                <option value="January">January</option>
+                <option value="Febuary">Febuary</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+        </div>
+        <div class="days">
+            <div class="day">Sun</div>
+            <div class="day">Mon</div>
+            <div class="day">Tue</div>
+            <div class="day">Wed</div>
+            <div class="day">Thu</div>
+            <div class="day">Fri</div>
+            <div class="day">Sat</div>
+        </div>
+    </div>
+    <p>
+        For more images go to <a href="https://picsum.photos/">Lorem Picsum</a>.
+    </p>
+</main>
+    
+
+    <script>
+        function changeMonth(selectedMonth) {
+            const daysContainer = document.querySelector(".days");
+            daysContainer.innerHTML = '';
+
+            
+            for (let i = 1; i <= 30; i++) {
+                const dayElement = document.createElement("div");
+                dayElement.className = "day";
+                dayElement.textContent = i;
+                daysContainer.appendChild(dayElement);
+            }
+
+            document.getElementById("calendar-title").textContent = selectedMonth;
+
+            const image = document.getElementById("month-image");
+            
+            if (selectedMonth === 'January'){
+                image.src = 'https://picsum.photos/id/29/700/100';
+            }
+            else if (selectedMonth === 'Febuary'){
+                image.src = 'https://picsum.photos/id/129/700/100';
+            }
+            else if (selectedMonth === 'March'){
+                image.src = 'https://picsum.photos/id/82/700/100';
+            }
+            else if (selectedMonth === 'April'){
+                image.src = 'https://picsum.photos/id/70/700/100';
+            }
+            else if (selectedMonth === 'May'){
+                image.src = 'https://picsum.photos/id/71/700/100';
+            }
+            else if (selectedMonth === 'June'){
+                image.src = 'https://picsum.photos/id/75/700/100';
+            }
+            else if (selectedMonth === 'July'){
+                image.src = 'https://picsum.photos/id/77/700/100';
+            }
+            else if (selectedMonth === 'August'){
+                image.src = 'https://picsum.photos/id/83/700/100';
+            }
+            else if (selectedMonth === 'September'){
+                image.src = 'https://picsum.photos/id/103/700/100';
+            }
+            else if (selectedMonth === 'October'){
+                image.src = 'https://picsum.photos/id/140/700/100';
+            }
+            else if (selectedMonth === 'November'){
+                image.src = 'https://picsum.photos/id/167/700/100';
+            }
+            else if (selectedMonth === 'December'){
+                image.src = 'https://picsum.photos/id/113/700/100';
+            }
+            
+        }
+    </script>
+</body>
+</html>
